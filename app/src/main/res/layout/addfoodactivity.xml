@@ -1,0 +1,65 @@
+<!-- activity_food_form.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Food Name" />
+
+            <EditText
+                android:id="@+id/editTextCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calories per 100g"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/editTextProteins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Proteins per 100g"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/editTextFats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fats per 100g"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/editTextCarbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carbs per 100g"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/buttonAddFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="+Add" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

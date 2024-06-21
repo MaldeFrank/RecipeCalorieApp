@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ListView
+        android:id="@+id/food_recipe_list"
+        android:layout_width="411dp"
+        android:layout_height="559dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipe_name"></ListView>
+
+    <EditText
+        android:id="@+id/recipe_name"
+        android:layout_width="403dp"
+        android:layout_height="72dp"
+        android:gravity="center_horizontal"
+        android:text="Recipe name:"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/food_recipe_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling"></EditText>
+
+    <Button
+        android:id="@+id/button_add_food"
+        android:layout_width="143dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="20dp"
+        android:text="+Food"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_recipe_list"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <Button
+        android:id="@+id/button_save_recipe"
+        android:layout_width="147dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="20dp"
+        android:text="Save"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_recipe_list"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <FrameLayout
+        android:id="@+id/recipe_food_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

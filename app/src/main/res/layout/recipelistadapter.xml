@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Liniear vertical layout for item and dropdown -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Liniear horizontal layout for item -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/recipe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Name of recipe"
+                android:gravity="center_vertical"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/recipe_remove_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                app:maxImageSize="32dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/recipe_info_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
+            <Button
+                android:text="+Meal"
+                android:id="@+id/recipe_make_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                />
+
+
+
+        </LinearLayout>
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/recipe_dropdown_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="0,1,2,3,4"
+            android:visibility="gone"
+            >
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_margin="1dp"
+                >
+                <TextView
+                    android:padding="3dip"
+                    android:text="Calories total:"/>
+                <TextView
+                    android:padding="3dip"
+                    android:text="Carbs total:"
+                    />
+                <TextView
+                    android:padding="3dip"
+                    android:text="Protein total:"
+                    />
+                <TextView
+                    android:padding="3dip"
+                    android:text="Fats total:"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_margin="1dp"
+                >
+                <TextView
+                    android:id="@+id/dropdown_calories"
+                    android:padding="3dip" />
+                <TextView
+                    android:id="@+id/dropdown_carbs"
+                    android:padding="3dip" />
+                <TextView
+                    android:padding="3dip"
+                    android:id="@+id/dropdown_protein"/>
+                <TextView
+                    android:padding="3dip"
+                    android:id="@+id/dropdown_fat"/>
+            </TableRow>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Ingredients"
+               android:textAlignment="center"
+               android:textSize="30dp"
+               >
+
+           </TextView>
+
+            <ListView
+                android:id="@+id/recipe_foods"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                >
+
+            </ListView>
+        </TableLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

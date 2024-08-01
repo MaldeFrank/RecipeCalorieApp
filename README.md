@@ -8,7 +8,7 @@ to your recipe, and then you will have a recipe with the macro info. Then you ca
 
 ### Code reduction and formatting
   Making the code look better, remove redundant code, and simplify naming of functions, entities and so on.
-  - Remove database helper from several dao since it is not doing anything
+1. Remove database helper from several dao since it is not doing anything
 
 ### Next tasks
 1. Making an activity for meals:

@@ -6,11 +6,11 @@ to your recipe, and then you will have a recipe with the macro info. Then you ca
 
 ## Future updates
 
-## Code reduction and formatting
+### Code reduction and formatting
   Making the code look better, remove redundant code, and simplify naming of functions, entities and so on.
   - Remove database helper from several dao since it is not doing anything
 
-## Next tasks
+### Next tasks
 1. Making an activity for meals:
    Here you should be able to see all the ongoing meals and be able to see how much of the meal is left
   

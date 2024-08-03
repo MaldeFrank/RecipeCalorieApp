@@ -1,7 +1,6 @@
 package adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
+import dao.MealDAO;
 import dao.RecipeDAO;
 import dao.RecipeFoodDAO;
 import db.DatabaseHelper;
+import entities.Meal;
 import entities.Recipe;
 import entities.RecipeFood;
 
@@ -30,6 +31,7 @@ public class RecipeListAdapter extends BaseAdapter {
     private List<RecipeFood> recipeFoods;
     private RecipeFoodDAO recipeFoodDAO;
     private RecipeDAO recipeDAO;
+    private MealDAO mealDAO;
 
     private DatabaseHelper db;
     public RecipeListAdapter(Context context, List<Recipe> recipeList ){
@@ -38,6 +40,7 @@ public class RecipeListAdapter extends BaseAdapter {
         this.db = DatabaseHelper.getInstance(context);
         recipeDAO = new RecipeDAO(context);
         recipeFoodDAO = new RecipeFoodDAO(context,db);
+        mealDAO = new MealDAO(context,db);
     }
 
     @Override
@@ -63,13 +66,14 @@ public class RecipeListAdapter extends BaseAdapter {
 
         Recipe recipe = (Recipe) getItem(position);
 
-        //get views
+        //Get views
         TextView recipeName = convertView.findViewById(R.id.recipe_name);
         FloatingActionButton recipeRemove = convertView.findViewById(R.id.recipe_remove_button);
         FloatingActionButton recipeInfo = convertView.findViewById(R.id.recipe_info_button);
-        Button recipeMake = convertView.findViewById(R.id.recipe_make_button);
+        Button makeMeal = convertView.findViewById(R.id.meal_make_button);
         TableLayout dropdown = convertView.findViewById(R.id.recipe_dropdown_info);
         ListView dropdownRecipeFoods = convertView.findViewById(R.id.recipe_foods);
+        EditText recipeAmount = convertView.findViewById(R.id.recipe_amount);
 
         //Dropdown info TextViews
         TextView dropdownCalories = convertView.findViewById(R.id.dropdown_calories);
@@ -92,6 +96,7 @@ public class RecipeListAdapter extends BaseAdapter {
         //Set buttons
         setRecipeRemoveButton(recipeRemove,recipe);
         setRecipeInfoButton(recipeInfo,dropdown);
+        setMakeMealButton(makeMeal,recipe,recipeAmount);
 
         return convertView;
     }
@@ -115,9 +120,11 @@ public class RecipeListAdapter extends BaseAdapter {
         });
     }
 
-    private void setRecipeMakeButton(Button recipeMake){
-        recipeMake.setOnClickListener(onclick->{
-
+    private void setMakeMealButton(Button makeMeal, Recipe recipe, EditText recipeAmount){
+        makeMeal.setOnClickListener(onclick->{
+         double amount =  Double.parseDouble(recipeAmount.getText().toString());
+         Meal meal = new Meal(recipe,amount);
+         mealDAO.create(meal);
         });
     }
 }

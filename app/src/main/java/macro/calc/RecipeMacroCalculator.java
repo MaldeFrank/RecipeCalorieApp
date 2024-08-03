@@ -18,7 +18,7 @@ public class RecipeMacroCalculator {
         return macros;
     }
 
-    public double totalGrams(List<RecipeFood> recipeFoods){
+    private double totalGrams(List<RecipeFood> recipeFoods){
         double totalGrams = 0;
 
         for (int i = 0; i < recipeFoods.size(); i++) {
@@ -27,7 +27,7 @@ public class RecipeMacroCalculator {
 
         return totalGrams;
     }
-    public double totalCalories(List<RecipeFood> recipeFoods) {
+    private double totalCalories(List<RecipeFood> recipeFoods) {
         double calories = 0;
 
         for (int i = 0; i < recipeFoods.size(); i++) {
@@ -40,7 +40,7 @@ public class RecipeMacroCalculator {
         return calories;
     }
 
-    public double totalProtein(List<RecipeFood> recipeFoods) {
+    private double totalProtein(List<RecipeFood> recipeFoods) {
         double protein = 0;
 
         for (RecipeFood recipeFood : recipeFoods) {
@@ -53,7 +53,7 @@ public class RecipeMacroCalculator {
         return protein;
     }
 
-    public double totalCarbs(List<RecipeFood> recipeFoods) {
+    private double totalCarbs(List<RecipeFood> recipeFoods) {
         double carbs = 0;
 
         for (RecipeFood recipeFood : recipeFoods) {
@@ -66,7 +66,7 @@ public class RecipeMacroCalculator {
         return carbs;
     }
 
-    public double totalFats(List<RecipeFood> recipeFoods) {
+    private double totalFats(List<RecipeFood> recipeFoods) {
         double fats = 0;
 
         for (RecipeFood recipeFood : recipeFoods) {

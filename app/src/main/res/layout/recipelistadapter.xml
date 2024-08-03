@@ -52,9 +52,19 @@
                 android:clickable="true"
                 app:srcCompat="@android:drawable/arrow_down_float" />
 
+            <EditText
+                android:id="@+id/recipe_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Amount:"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_margin="8dp"/>
+
             <Button
                 android:text="+Meal"
-                android:id="@+id/recipe_make_button"
+                android:id="@+id/meal_make_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:clickable="true"

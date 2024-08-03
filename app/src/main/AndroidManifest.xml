@@ -40,6 +40,11 @@
             android:windowSoftInputMode="adjustPan">
         >
         </activity>
+        <activity android:name=".MealList"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            >
+        </activity>
     </application>
 
 </manifest>

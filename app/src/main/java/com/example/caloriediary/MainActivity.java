@@ -18,6 +18,7 @@ public class MainActivity extends FragmentActivity {
         Button goToFoodListButton = goToFoodList();
         Button goToCreateRecipe = goToCreateRecipe();
         Button goToRecipeList = goToRecipeList();
+        Button goToMealList = goToMealList();
 
     }
 
@@ -55,5 +56,14 @@ public class MainActivity extends FragmentActivity {
             startActivity(intent);
         });
         return goToRecipeList;
+    }
+
+    private Button goToMealList(){
+        Button goToMealList = findViewById(R.id.meal_list);
+        goToMealList.setOnClickListener(onClick->{
+            Intent intent = new Intent(this,MealList.class);
+            startActivity(intent);
+        });
+        return goToMealList;
     }
 }

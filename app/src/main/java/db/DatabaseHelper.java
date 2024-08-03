@@ -59,6 +59,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY (recipe_id) REFERENCES Recipe(id)," +
                 "FOREIGN KEY (food_id) REFERENCES Food(id)" +
                 ")");
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS Meal (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "recipe_name TEXT NOT NULL," +
+                "amount REAL," +
+                "calories REAL," +
+                "proteins REAL," +
+                "carbs REAL," +
+                "fats REAL" +
+                ")");
     }
 
 
